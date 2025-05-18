@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import AttractionCard from '../components/AttractionCard.jsx';
 import EventCard from '../components/EventCard.jsx';
-import VenueCard from '../components/VenueCard.jsx';
 import { fetchCategoryContent } from '../api/ticketmaster.js';
 
 const slugToClassification = {
@@ -113,15 +112,6 @@ export default function CategoryPage() {
         <div className="event-grid">
           {data.events.map(e => (
             <EventCard key={e.id} event={e} />
-          ))}
-        </div>
-      </section>
-
-      <section>
-        <h2>Spillesteder</h2>
-        <div className="event-grid">
-          {data.venues.map(v => (
-            <VenueCard key={v.id} item={v} />
           ))}
         </div>
       </section>

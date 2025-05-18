@@ -12,13 +12,6 @@ const FESTIVAL_IDS = [
   'Z698xZb_Z17q3qg'    // Tons of Rock
 ];
 
-// const FESTIVAL_NAMES = [
-//   'Findings',
-//   'Neon',
-//   'Skeikampenfestivalen',
-//   'Tons of Rock'
-// ];
-
 /* Henter festivaler ved angitte Ticketmaster event IDs */
 export async function fetchFestivalsById(
   ids = FESTIVAL_IDS
@@ -40,11 +33,7 @@ export async function fetchFestivalsById(
   return events;
 }
 
-/**
- * Henter spesifiserte festivaler etter navn
- * @param {string[]} names Array med festivalnavn
- * @returns {Promise<Array>} Array av event-objekter
- */
+/* Henter spesifiserte festivaler etter navn */
 export async function fetchFestivalsByName(
   names = FESTIVAL_NAMES
 ) {
@@ -63,9 +52,6 @@ export async function fetchFestivalsByName(
   );
   const datas = await Promise.all(
     responses.map((res) => {
-      if (!res.ok) {
-        throw new Error(`HTTP-feil: ${res.status}`);
-      }
       return res.json();
     })
   );
@@ -109,7 +95,9 @@ export async function fetchCategoryContent(filters) {
   if (filters.countryCode)        query.append('countryCode', filters.countryCode);
   if (filters.date)               query.append('startDateTime', `${filters.date}T00:00:00Z`);
   if (filters.classificationName) query.append('classificationName', filters.classificationName);
-
+  // URLSearchParams objects are iterable, so they can directly be used in a for...of structure to iterate over key/value pairs in the same order as they appear in the query string, for example the following two lines are equivalent:
+  // https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
+  
   // Funksjon for hente embedded data
   async function fetchEmbedded(endpoint) {
     const url = `${BASE_URL}/${endpoint}.json?${query.toString()}`;
