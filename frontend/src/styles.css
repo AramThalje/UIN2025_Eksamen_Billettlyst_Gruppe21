@@ -151,18 +151,17 @@ body {
 /* EVENTS CITIES SECTION */
 
 /* Grid container for CitiesSection */
-.grid_gap-6,
-.grid-gap-6 {
+.grid_gap,
+.grid-gap {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
   margin-top: 1rem;
 }
 
-/* Wrapper rundt hver event */
 
 
-/* Selve kortet */
+/* Selve event kortet */
 .event-detail {
   background: #fff;
   border-radius: 0.5rem;
@@ -201,7 +200,7 @@ body {
 
 
 
-/* EVENT CARD (OTHER EVENTS) */
+/* EVENT CARD */
 .event-card {
   background: #fff;
   border-radius: 8px;

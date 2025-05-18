@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function Dashboard() {
+export default function Dashboard() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState('');
 
@@ -8,7 +8,7 @@ function Dashboard() {
     e.preventDefault();
     setIsLoggedIn(true);
   };
-
+  /* Logginn form */
   if (!isLoggedIn) {
     return (
       <form onSubmit={handleLogin}>
@@ -20,12 +20,10 @@ function Dashboard() {
   }
 
   return (
-    <div>
+    <section>
       <h1>Min side</h1>
       <p>Velkommen, {username}!</p>
-      <p>Her vil dine lagrede arrangementer vises (fremtidig funksjon).</p>
-    </div>
+      
+    </section>
   );
 }
-
-export default Dashboard;
