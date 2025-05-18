@@ -1,0 +1,52 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f4f4f4;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background: #111;
+  color: white;
+}
+
+.navbar .logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: white;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar li a {
+  color: white;
+  text-decoration: none;
+}
+
+.event-grid, .artist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.event-card, .artist-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.event-card img, .artist-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}

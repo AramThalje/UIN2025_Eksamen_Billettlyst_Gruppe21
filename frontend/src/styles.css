@@ -1,0 +1,480 @@
+/* RESET & GLOBAL STYLES */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* HEADER */
+.Header {
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+}
+.Header .logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0070f3;
+  text-decoration: none;
+}
+.Header ul {
+  list-style: none;
+  display: flex;
+}
+.Header ul li + li {
+  margin-left: 1rem;
+}
+.Header a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+.Header a:hover {
+  color: #005bb5;
+}
+
+/* SEARCH FILTER */
+.filters {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+.filters input {
+  flex: 1;
+  min-width: 150px;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* HOME PAGE TITLE */
+.home h1 {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 2rem;
+  color: #222;
+}
+
+/* GRID UTILITIES */
+.event-grid,
+.attractions-grid,
+.festival-pass-grid,
+.events-cities-list {
+  display: grid;
+  gap: 1.5rem;
+}
+.event-grid,
+.attractions-grid {
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  margin-bottom: 2rem;
+}
+
+/* FESTIVALS SECTION */
+.festival-pass {
+  margin: 2rem 0;
+}
+.festival-pass h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+.festival-pass-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+.festival-pass-card {
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.festival-pass-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.festival-pass-card-content {
+  padding: 1rem;
+  flex: 1;
+}
+.festival-pass-card-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.festival-pass-card-content p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.25rem;
+}
+.festival-pass-actions {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem;
+}
+.festival-pass-actions a,
+.festival-pass-actions button {
+  flex: 1;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  font-weight: 500;
+  cursor: pointer;
+}
+.festival-pass-actions a {
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+}
+.festival-pass-actions button {
+  background: #e2e8f0;
+  border: 1px solid #cbd5e0;
+}
+
+/* EVENTS CITIES SECTION */
+
+/* Grid container for CitiesSection */
+.grid_gap-6,
+.grid-gap-6 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Wrapper rundt hver event */
+
+
+/* Selve kortet */
+.event-detail {
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.event-detail:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Bilde i toppen av kortet */
+.event-detail img {
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+/* Innholdsseksjon under bildet */
+.event-detail h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1rem;
+}
+.event-detail p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0 1rem 0.75rem;
+}
+
+
+
+
+/* EVENT CARD (OTHER EVENTS) */
+.event-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.event-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+.event-card-content {
+  padding: 1rem;
+  flex: 1;
+}
+.event-card h3 {
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+.event-card p {
+  font-size: 0.875rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+.event-card .btn {
+  display: inline-block;
+  background: #0070f3;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  text-align: center;
+  margin-top: auto;
+}
+.event-card .btn:hover {
+  background: #005bb5;
+}
+
+
+/* ======================================================================
+   ARTIST CARD
+   ====================================================================== */
+.artist-card {
+  background: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+.artist-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.artist-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+.artist-card h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1rem 0 0.5rem;
+  color: #222;
+}
+.artist-card p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+
+
+
+/* ATTRACTION CARD */
+.attraction-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.attraction-card .image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+
+/* ======================================================================
+   ARTISTS SECTION
+   ====================================================================== */
+.artists {
+  margin: 2rem 0;
+}
+.artists h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.artists-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+.artist-card {
+  background: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+.artist-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.artist-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+.artist-card p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  margin: 1rem 0;
+  flex-grow: 1;
+  padding: 0 0.5rem;
+}
+
+/* Responsiv justering */
+@media (max-width: 600px) {
+  .artists-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+
+
+/* VENUE CARD */
+.venue-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.venue-card .image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+.venue-card h3 {
+  font-size: 1.125rem;
+  margin: 1rem;
+}
+.venue-card p {
+  font-size: 0.875rem;
+  color: #555;
+  margin: 0 1rem 1rem;
+}
+
+/* RESPONSIVE ADJUSTMENTS */
+@media (max-width: 600px) {
+  .Header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .Header ul {
+    flex-direction: column;
+  }
+  .Header ul li + li {
+    margin-top: 0.5rem;
+  }
+  .festival-pass-grid,
+  .city-buttons,
+  .events-cities-list {
+    gap: 1rem;
+  }
+  .event-grid,
+  .attractions-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+/* ==============================
+   EVENTS CITIES SECTION
+   ============================== */
+.city-events {
+  margin: 2rem 0;
+}
+.city-events h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.city-buttons {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+.city-buttons button {
+  padding: 0.5rem 1rem;
+  background: #e2e8f0;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.city-buttons button:hover {
+  background: #cbd5e0;
+}
+.city-buttons button.active {
+  background: #333;
+  color: #fff;
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+
+
+.event-grid .event-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.event-grid .event-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.event-grid .event-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+.event-grid .event-card h3 {
+  font-size: 1.125rem;
+  margin: 1rem;
+  flex: 1;
+}
+.event-grid .event-card p {
+  font-size: 0.875rem;
+  color: #555;
+  margin: 0 1rem 1rem;
+}
+.event-grid .event-card .btn {
+  margin: 1rem;
+}
