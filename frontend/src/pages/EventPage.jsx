@@ -102,7 +102,7 @@ export default function EventPage() {
                     <p>{v.dates?.start?.localDate}</p>
                   </div>
                   <div className="festival-pass-actions">
-                    <a href={v.url} target="_blank" rel="noopener noreferrer">Kjøp</a>
+                    <button>Kjøp</button>
                     <button>Legg til i ønskeliste</button>
                   </div>
                 </article>
