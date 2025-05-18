@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { fetchFestivalsById } from '../api/ticketmaster';
 import EventCard from '../components/EventCard';
-import CityEvents from '../components/CityEvents';
 import FestivalsSection from '../components/FestivalsSection';
 import EventsCities from '../components/EventsCities';
 
