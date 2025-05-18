@@ -100,20 +100,20 @@ export default function CategoryPage() {
       {/* Resultater */}
       <section>
         <h2>Attraksjoner</h2>
-        <div className="attractions-grid">
+        <article className="attractions-grid">
           {data.attractions.map(a => (
             <AttractionCard key={a.id} item={a} />
           ))}
-        </div>
+        </article>
       </section>
 
       <section>
         <h2>Arrangementer</h2>
-        <div className="event-grid">
+        <article className="event-grid">
           {data.events.map(e => (
             <EventCard key={e.id} event={e} />
           ))}
-        </div>
+        </article>
       </section>
     </div>
   );

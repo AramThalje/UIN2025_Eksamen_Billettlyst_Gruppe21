@@ -50,7 +50,7 @@ export default function EventPage() {
     .filter(Boolean);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <section className="min-h-screen bg-gray-50">
       
 
       <main className="max-w-6xl mx-auto p-6 space-y-10">
@@ -79,11 +79,11 @@ export default function EventPage() {
         {/* Sosiale medier */}
         <section>
           <h2 className="text-2xl font-semibold mb-2">Følg oss på sosiale medier:</h2>
-          <div className="flex space-x-6 text-2xl">
+          <article className="flex space-x-6 text-2xl">
             <a href="#" aria-label="Facebook"><i className="fab fa-facebook" /></a>
             <a href="#" aria-label="Instagram"><i className="fab fa-instagram" /></a>
             <a href="#" aria-label="Twitter"><i className="fab fa-twitter" /></a>
-          </div>
+          </article>
         </section>
 
         {/* Festivalpass */}
@@ -117,7 +117,7 @@ export default function EventPage() {
           {attractions.length === 0 ? (
             <p>Ingen artister funnet.</p>
           ) : (
-            <div className="artists-grid">
+            <article className="artists-grid">
               {attractions.map((artist) => (
                 <article key={artist.id} className="artist-card">
                   {artist.images?.[0]?.url && (
@@ -129,10 +129,10 @@ export default function EventPage() {
                   <p>{artist.name}</p>
                 </article>
               ))}
-            </div>
+            </article>
           )}
         </section>
       </main>
-    </div>
+    </section>
   );
 }
