@@ -2,8 +2,8 @@
 import '../styles.css';
 
 export default function EventCard({ event }) {
-  const date = event.dates?.start?.localDate || 'Ukjent dato';
-  const venueName = event._embedded?.venues?.[0]?.name || 'Ukjent sted';
+  const date = event.dates?.start?.localDate;
+  const venueName = event._embedded?.venues?.[0]?.name;
 
   return (
     <section className="festival-pass-card">

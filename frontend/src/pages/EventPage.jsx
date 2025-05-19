@@ -23,7 +23,7 @@ async function fetchVariantsByKeyword(baseName) {
 export default function EventPage() {
   const { id } = useParams();
   const [event, setEvent] = useState(null);
-  
+  const [variants, setVariants] = useState([]);
   
 
   useEffect(() => {
@@ -33,7 +33,7 @@ export default function EventPage() {
         const baseName = evt.name.split(' - ')[0];
         return fetchVariantsByKeyword(baseName);
       })
-      
+      .then((vars) => setVariants(vars))
   }, [id]);
 
   
