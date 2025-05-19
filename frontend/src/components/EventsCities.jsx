@@ -27,29 +27,25 @@ export default function EventsCities() {
 
       <section className="city-buttons">
         {cities.map(city => (
-          <button
-            key={city}
-            onClick={() => setCity(city)}>
-            {city}
-          </button>
+          <button key={city} onClick={() => setCity(city)}> {city} </button>
         ))}
       </section>
 
       <div className="grid_gap">
-        {events.map(evt => {
-          const imageUrl = evt.images?.[0]?.url;
-          const date     = evt.dates?.start?.localDate;
-          const time     = evt.dates?.start?.localTime;
-          const venue    = evt._embedded?.venues?.[0] || {};
-          const country  = venue.country?.countryCode;
+        {events.map(event => {
+          const imageUrl = event.images?.[0]?.url;
+          const date = event.dates?.start?.localDate;
+          const time = event.dates?.start?.localTime;
+          const venue = event._embedded?.venues?.[0] || {};
+          const country = venue.country?.countryCode;
           const cityName = venue.city?.name;
-          const venueName= venue.name;
+          const venueName = venue.name;
 
           return (
             <section className='CitiesSection'>
-                <article key={evt.id} className="event-detail">
-                {imageUrl && <img src={imageUrl} alt={evt.name} />}
-                <h3>{evt.name}</h3>
+                <article key={event.id} className="event-detail">
+                {imageUrl && <img src={imageUrl} alt={event.name} />}
+                <h3>{event.name}</h3>
                 {date  && <p>{date}{time && ` • ${time}`}</p>}
                 {country && <p>{country}</p>}
                 {cityName&& <p>{cityName}</p>}
