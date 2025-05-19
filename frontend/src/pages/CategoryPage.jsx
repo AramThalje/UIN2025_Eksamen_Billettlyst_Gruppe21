@@ -13,7 +13,7 @@ const slugToClassification = {
 
 export default function CategoryPage() {
   const { slug } = useParams();
-  const classificationName = slugToClassification[slug] || undefined;
+  const classificationName = slugToClassification[slug];
 
   const [data, setData] = useState({ attractions: [], events: [], venues: [] });
   const [filters, setFilters] = useState({

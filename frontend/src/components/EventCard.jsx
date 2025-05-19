@@ -2,8 +2,8 @@
 import '../styles.css';
 
 export default function EventCard({ event }) {
-  const date = event.dates?.start?.localDate;
-  const venueName = event._embedded?.venues?.[0]?.name;
+  const date = event.dates?.start?.localDate; // henter lokal dato hvis dates og start finnes.
+  const venueName = event._embedded?.venues?.[0]?.name; // henter navnet på første venue i _embedded.venues om det finnes.
 
   return (
     <section className="festival-pass-card">

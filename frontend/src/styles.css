@@ -1,4 +1,4 @@
-/* RESET & GLOBAL STYLES */
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -19,7 +19,6 @@ body {
   padding: 1rem;
 }
 
-/* HEADER */
 .Header {
   background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -73,7 +72,7 @@ body {
   color: #222;
 }
 
-/* GRID UTILITIES */
+
 .event-grid,
 .attractions-grid,
 .festival-pass-grid,
@@ -149,8 +148,6 @@ body {
 }
 
 /* EVENTS CITIES SECTION */
-
-/* Grid container for CitiesSection */
 .grid_gap,
 .grid-gap {
   display: grid;
@@ -243,9 +240,9 @@ body {
 }
 
 
-/* ======================================================================
-   ARTIST CARD
-   ====================================================================== */
+
+/* ARTIST CARD */ 
+ 
 .artist-card {
   background: #ffffff;
   border-radius: 0.75rem;
@@ -299,9 +296,8 @@ body {
 }
 
 
-/* ======================================================================
-   ARTISTS SECTION
-   ====================================================================== */
+
+/* ARTISTS SECTION */   
 .artists {
   margin: 2rem 0;
 }
@@ -352,34 +348,6 @@ body {
   }
 }
 
-
-
-
-/* VENUE CARD */
-.venue-card {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-.venue-card .image {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-}
-.venue-card h3 {
-  font-size: 1.125rem;
-  margin: 1rem;
-}
-.venue-card p {
-  font-size: 0.875rem;
-  color: #555;
-  margin: 0 1rem 1rem;
-}
-
 /* RESPONSIVE ADJUSTMENTS */
 @media (max-width: 600px) {
   .Header {
@@ -402,9 +370,7 @@ body {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 }
-/* ==============================
-   EVENTS CITIES SECTION
-   ============================== */
+
 .city-events {
   margin: 2rem 0;
 }
