@@ -16,8 +16,8 @@ const FESTIVAL_IDS = [
 export async function fetchFestivalsById(
   Fes_ids = FESTIVAL_IDS
 ) {
-  const urls = Fes_ids.map(
-    (id) => `${BASE_URL}/events/${id}.json?apikey=${API_KEY}`
+  const urls = Fes_ids.map((id) =>
+      `${BASE_URL}/events/${id}.json?apikey=${API_KEY}`
   );
 
   const responses = await Promise.all(
@@ -25,7 +25,7 @@ export async function fetchFestivalsById(
   );
 
   const events = await Promise.all(
-    responses.map((res, idx) => {
+    responses.map((res) => {
       return res.json();
     })
   );
@@ -36,10 +36,11 @@ export async function fetchFestivalsById(
 
 /* Hent alle arrangementer i en by */
 export async function fetchEventsByCity(city) {
-  const url = `${BASE_URL}/events.json?apikey=${API_KEY}` + `&city=${encodeURIComponent(city)}`;
+  const url = `${BASE_URL}/events.json?apikey=${API_KEY}` + `&city=${encodeURIComponent(city)}`; 
+  // The encodeURIComponent() method encodes special characters including: , / ? : @ & = + $ #
   const res = await fetch(url);
   const data = await res.json();
-  return data._embedded?.events || [];
+  return data._embedded?.events;
 }
 
 /* Hent detaljert info om ett arrangement */
@@ -54,10 +55,10 @@ export async function fetchEventById(id) {
 export async function fetchCategoryContent(filters) {
   // Bygg query-streng
   let query = new URLSearchParams({ apikey: API_KEY });
-  if (filters.keyword)            query.append('keyword', filters.keyword);
-  if (filters.city)               query.append('city', filters.city);
-  if (filters.countryCode)        query.append('countryCode', filters.countryCode);
-  if (filters.date)               query.append('startDateTime', `${filters.date}T00:00:00Z`);
+  if (filters.keyword) query.append('keyword', filters.keyword);
+  if (filters.city) query.append('city', filters.city);
+  if (filters.countryCode) query.append('countryCode', filters.countryCode);
+  if (filters.date) query.append('startDateTime', `${filters.date}T00:00:00Z`);
   if (filters.classificationName) query.append('classificationName', filters.classificationName);
   // URLSearchParams objects are iterable, so they can directly be used in a for...of structure to iterate over key/value pairs in the same order as they appear in the query string, for example the following two lines are equivalent:
   // https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
@@ -70,7 +71,7 @@ export async function fetchCategoryContent(filters) {
     return data._embedded ? Object.values(data._embedded)[0] : [];
   }
 
-  const [attractions, events, venues] = await Promise.all([
+  const [attractions, events, venues] = await Promise.all([ // The Promise.all() method takes an array of promises and returns a single Promise that resolves when all of the promises have resolved
     fetchEmbedded('attractions'),
     fetchEmbedded('events'),
     fetchEmbedded('venues'),
