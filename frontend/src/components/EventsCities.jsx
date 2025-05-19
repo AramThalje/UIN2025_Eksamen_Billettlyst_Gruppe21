@@ -48,8 +48,8 @@ export default function EventsCities() {
                 <h3>{event.name}</h3>
                 {date  && <p>{date}{time && ` • ${time}`}</p>}
                 {country && <p>{country}</p>}
-                {cityName&& <p>{cityName}</p>}
-                {venueName&& <p>{venueName}</p>}
+                {cityName && <p>{cityName}</p>}
+                {venueName && <p>{venueName}</p>}
                 </article>
             </section>
           );

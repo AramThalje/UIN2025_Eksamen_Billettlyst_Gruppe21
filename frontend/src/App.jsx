@@ -1,16 +1,16 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import EventPage from './pages/EventPage';
 import CategoryPage from './pages/CategoryPage';
 import Dashboard from './pages/Dashboard';
-import Navbar from './components/Header';
 import './styles.css';
+import Header from './components/Header';
 
 
 export default function App() {
   return (
     <>
-      <Navbar />
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/event/:id" element={<EventPage />} />

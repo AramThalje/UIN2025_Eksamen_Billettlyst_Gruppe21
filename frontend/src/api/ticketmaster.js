@@ -1,6 +1,6 @@
 
 
-// Din Ticketmaster API-nøkkel, Her brukte vi Aram sin apikey for å hente info fra ticketmaster api
+// Ticketmaster API-nøkkel, Her brukte vi Aram sin apikey for å hente info fra ticketmaster api
 const API_KEY = 'OJWIEjGGbVgjMgWLS99KuhEdrPtRGiLh';
 const BASE_URL = 'https://app.ticketmaster.com/discovery/v2';
 
